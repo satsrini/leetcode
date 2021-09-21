@@ -29,6 +29,9 @@ public class ThreeSum
 
        result = new ArrayList<>();
 
+       Arrays.sort(nums);
+       
+
        return result;
     }
 
