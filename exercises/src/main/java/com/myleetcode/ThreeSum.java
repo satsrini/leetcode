@@ -2,6 +2,7 @@ package com.myleetcode;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * <h1>ThreeSum</h1>
@@ -30,6 +31,35 @@ public class ThreeSum
        result = new ArrayList<>();
 
        Arrays.sort(nums);
+     
+       int j = 0;
+       int k = 0;
+       int target = 0;
+
+       for(int i = 0; i < (nums.length-2); i++)
+       {
+          j = i+1;
+          k = (nums.length - 1);
+          target = nums[i]*-1;
+         
+          while(j < k)
+          {
+             if(nums[j] + nums[k] == target)
+             {
+               List<Integer> list = new ArrayList<>(Arrays.asList({nums[i], nums[j],nums[k]}));
+               result.add(list);
+               j++;
+               k--;
+             }else
+             if(nums[j] + nums[k] < target)
+             {
+                j++;
+             }else
+             {
+                k--;
+             }
+          }
+       }
        
 
        return result;
