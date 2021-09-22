@@ -46,8 +46,7 @@ public class ThreeSum
           {
              if(nums[j] + nums[k] == target)
              {
-               List<Integer> list = new ArrayList<>(Arrays.asList({nums[i], nums[j],nums[k]}));
-               result.add(list);
+               result.add(List.of(nums[i], nums[j],nums[k]));
                j++;
                k--;
              }else
