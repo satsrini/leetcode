@@ -1,8 +1,8 @@
 package com.myleetcode;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * <h1>ThreeSum</h1>
@@ -46,7 +46,10 @@ public class ThreeSum
           {
              if(nums[j] + nums[k] == target)
              {
-               List<Integer> list = List.of(nums[i], nums[j],nums[k]);
+               List<Integer> list = new ArrayList<>();
+               list.add(nums[i]);
+               list.add(nums[j]);
+               list.add(nums[k]);
                if(!result.contains(list)) // to avoid duplicates
                {
                    result.add(list);
