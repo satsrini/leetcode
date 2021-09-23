@@ -36,7 +36,7 @@ public class ThreeSum
        int k = 0;
        int target = 0;
 
-       for(int i = 0; i < (nums.length-2); i++)
+       for(int i = 0; nums[i] <= 0 && i < (nums.length-2); i++)
        {
           j = i+1;
           k = (nums.length - 1);
