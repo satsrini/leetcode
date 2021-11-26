@@ -53,7 +53,15 @@ public class ParkingLot
     {
        Date date1 = SDF.parse(E);
        Date date2 = SDF.parse(L);
-       return date2.getMinutes()-date1.getMinutes();
+
+       System.out.println();
+
+       long resultinMillis = date2.getTime()-date1.getTime();
+
+       int result = (int)(resultinMillis/(1000*60));
+
+       System.out.println("RESULT " + result);
+       return result;
     }
 
     public static void main(String[] args)
