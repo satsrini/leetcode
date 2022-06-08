@@ -15,7 +15,7 @@ public class MedianEqualArrays
 
     public MedianEqualArrays()
     {
-
+        //dummy constructor
     }
 
 
@@ -40,23 +40,29 @@ public class MedianEqualArrays
 
     private double median(int[] a, int ai, int aj, int[] b, int bi, int bj)
     {
-        int aDiff = aj-ai;
-   
-        if(aDiff >=0 && aDiff <=1)  // if the diff is either 0 or 1
+
+        
+        int aDiff = aj-ai+1;
+        int bDiff = bj-bi+1;
+
+        if(aDiff%2 == 1) // odd
+        {
+           if(a[aDiff/2] == b[bDiff/2])
+           {
+              return a[aDiff/2];
+           }
+        }else // even
         {
 
-            if(aDiff == 0)
-            {
-                return (double)(a[aj] + b[bi]/2);
-            }
+           if(a[aDiff/2] == b[bDiff/2] && a[aDiff/2 + 1] == b[bDiff/2 + 1])
+           {
+              return (double)(a[aDiff/2] + a[aDiff/2 + 1]/2);           
+           }
 
-            if(a[aj] <= b[bi]) // 
-            {
-
-            }           
         }
 
         return 0.0;
+   
     }
 
 }
