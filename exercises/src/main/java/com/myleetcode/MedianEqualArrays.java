@@ -32,8 +32,31 @@ public class MedianEqualArrays
           return (double)((a[0] + b[0])/2);
        }
 
+       result = median(a, 0, a.length-1, b, 0, b.length-1);
+
 
        return result;
+    }
+
+    private double median(int[] a, int ai, int aj, int[] b, int bi, int bj)
+    {
+        int aDiff = aj-ai;
+   
+        if(aDiff >=0 && aDiff <=1)  // if the diff is either 0 or 1
+        {
+
+            if(aDiff == 0)
+            {
+                return (double)(a[aj] + b[bi]/2);
+            }
+
+            if(a[aj] <= b[bi]) // 
+            {
+
+            }           
+        }
+
+        return 0.0;
     }
 
 }
