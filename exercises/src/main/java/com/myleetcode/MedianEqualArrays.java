@@ -43,31 +43,37 @@ public class MedianEqualArrays
           return (double)((a[n-1] + b[0])/2);
        }
 
-       return median(a, 0, a.length-1, b, 0, b.length-1);
+       // if middle values are equal, then it is straight forward to calculate median
+       if(a[n/2] == b[n/2])
+       {
+          if(n % 2 == 0) // length is even
+          {
+             return (double)(a[n/2]);
+          }else // length is odd
+          {
+             if(a[n/2 + 1] == b[n/2+1] || a[n/2 + 1] < b[n/2+1])
+             {
+                return (double)((a[n/2]+a[n/2 + 1])/2);
+             }else
+             {
+                return (double)((a[n/2]+b[n/2 + 1])/2);
+             }
+          }
+       }
+
+       return median(a, 0, n-1, b, 0, n-1);
     }
 
     private double median(int[] a, int ai, int aj, int[] b, int bi, int bj)
     {
-
         
         int aDiff = aj-ai+1;
-        int bDiff = bj-bi+1;
 
-        if(aDiff%2 == 1) // odd
+        if(aDiff == 1)
         {
-           if(a[aDiff/2] == b[bDiff/2])
-           {
-              return a[aDiff/2];
-           }
-        }else // even
-        {
-
-           if(a[aDiff/2] == b[bDiff/2] && a[aDiff/2 + 1] == b[bDiff/2 + 1])
-           {
-              return (double)(a[aDiff/2] + a[aDiff/2 + 1]/2);           
-           }
 
         }
+
 
         return 0.0;
    
