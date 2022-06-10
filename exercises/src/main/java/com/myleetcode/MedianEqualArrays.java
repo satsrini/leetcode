@@ -25,17 +25,25 @@ public class MedianEqualArrays
      */
     public double solution(int[] a, int[] b)
     {
-       double result = 0;
 
        if(a.length == 1)
        {
           return (double)((a[0] + b[0])/2);
        }
 
-       result = median(a, 0, a.length-1, b, 0, b.length-1);
+       int n = a.length;
 
+       if(a[n-1] <= b[0])
+       {
+          return (double)((a[n-1] + b[0])/2);
+       }
 
-       return result;
+       if(a[0] >= b[n-1])
+       {
+          return (double)((a[n-1] + b[0])/2);
+       }
+
+       return median(a, 0, a.length-1, b, 0, b.length-1);
     }
 
     private double median(int[] a, int ai, int aj, int[] b, int bi, int bj)
