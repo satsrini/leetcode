@@ -26,12 +26,12 @@ public class MedianEqualArrays
     public double solution(int[] a, int[] b)
     {
 
+       int n = a.length;
+
        if(a.length == 1)
        {
           return (double)((a[0] + b[0])/2);
        }
-
-       int n = a.length;
 
        if(a[n-1] <= b[0])
        {
@@ -40,16 +40,16 @@ public class MedianEqualArrays
 
        if(a[0] >= b[n-1])
        {
-          return (double)((a[n-1] + b[0])/2);
+          return (double)((a[0] + b[n-1])/2);
        }
 
        // if middle values are equal, then it is straight forward to calculate median
        if(a[n/2] == b[n/2])
        {
-          if(n % 2 == 0) // length is even
+          if(n % 2 == 1) // length is odd
           {
              return (double)(a[n/2]);
-          }else // length is odd
+          }else // length is even
           {
              if(a[n/2 + 1] == b[n/2+1] || a[n/2 + 1] < b[n/2+1])
              {
@@ -67,16 +67,39 @@ public class MedianEqualArrays
     private double median(int[] a, int ai, int aj, int[] b, int bi, int bj)
     {
         
-        int aDiff = aj-ai+1;
+        int aDiff = aj-ai;
 
-        if(aDiff == 1)
+        if(aDiff == 1) // coming to the end, time to calculate the combined median
         {
+            if(a[aj] <= b[bi]) // {a[ai],a[aj],b[bi],b[bj]}
+            {
+                return (double)((a[aj]+b[bi])/2);
+            }
 
+            if(a[ai] >= b[bj]) // {b[bi],b[bj],a[ai],a[aj]}
+            {
+                return (double)((a[ai]+b[bj])/2);
+            }
+
+            if(a[ai] >= b[bi] && a[aj] <= b[bj]) // {b[bi],a[ai],a[aj],b[bj]}
+            {
+                return (double)((a[ai]+a[aj])/2);
+            }
+
+            return (double)((b[bi]+b[bj])/2); // {a[ai],b[bi],b[bj],a[aj]}
         }
 
+        int aMidIndex = ai + aDiff/2;
+        int bMidIndex = bi + aDiff/2;
 
-        return 0.0;
-   
+        if(a[aMidIndex] >= b[bMidIndex])
+        {
+           return median(a,ai,aMidIndex,b,bMidIndex, bj);
+        }else
+        {
+           return median(a,aMidIndex,aj,b,bi,bMidIndex);
+        }
+       
     }
 
 }
