@@ -134,7 +134,7 @@ public class MedianEqualArrays
        System.out.println("3.5 is the answer: " + medianEqualArrays.solution(a,b));
     }*/
 
-    public static void main(String[] args)
+    /*public static void main(String[] args)
     {
 
        int[] a = {1,4,7,8 };
@@ -143,7 +143,19 @@ public class MedianEqualArrays
        MedianEqualArrays medianEqualArrays = new MedianEqualArrays();
 
        System.out.println("6.5 is the answer: " + medianEqualArrays.solution(a,b));
+    }*/
+
+    public static void main(String[] args)
+    {
+
+       int[] a = { 1,4,7,8,10 };
+       int[] b = { 2,5,6,7,9 };
+
+       MedianEqualArrays medianEqualArrays = new MedianEqualArrays();
+
+       System.out.println("again 6.5 is the answer: " + medianEqualArrays.solution(a,b));
     }
+
 
    /*public static void main(String[] args)
    {
