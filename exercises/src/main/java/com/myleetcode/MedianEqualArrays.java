@@ -30,17 +30,17 @@ public class MedianEqualArrays
 
        if(a.length == 1)
        {
-          return (double)((a[0] + b[0])/2);
+          return ((double)(a[0] + b[0]))/2;
        }
 
-       if(a[n-1] <= b[0])
+       if(a[n-1] <= b[0])   //{a[0],a[n-1], b[0], b[n-1] }
        {
-          return (double)((a[n-1] + b[0])/2);
+          return ((double)(a[n-1] + b[0]))/2;
        }
 
-       if(a[0] >= b[n-1])
+       if(a[0] >= b[n-1]) //{b[0],b[n-1], a[0], a[n-1] }
        {
-          return (double)((a[0] + b[n-1])/2);
+          return ((double)(a[0] + b[n-1]))/2;
        }
 
        // if middle values are equal, then it is straight forward to calculate median
@@ -53,10 +53,10 @@ public class MedianEqualArrays
           {
              if(a[n/2 + 1] == b[n/2+1] || a[n/2 + 1] < b[n/2+1])
              {
-                return (double)((a[n/2]+a[n/2 + 1])/2);
+                return ((double)(a[n/2]+a[n/2 + 1]))/2;
              }else
              {
-                return (double)((a[n/2]+b[n/2 + 1])/2);
+                return ((double)(a[n/2]+b[n/2 + 1]))/2;
              }
           }
        }
@@ -73,20 +73,20 @@ public class MedianEqualArrays
         {
             if(a[aj] <= b[bi]) // {a[ai],a[aj],b[bi],b[bj]}
             {
-                return (double)((a[aj]+b[bi])/2);
+                return ((double)(a[aj]+b[bi]))/2;
             }
 
             if(a[ai] >= b[bj]) // {b[bi],b[bj],a[ai],a[aj]}
             {
-                return (double)((a[ai]+b[bj])/2);
+                return ((double)(a[ai]+b[bj]))/2;
             }
 
             if(a[ai] >= b[bi] && a[aj] <= b[bj]) // {b[bi],a[ai],a[aj],b[bj]}
             {
-                return (double)((a[ai]+a[aj])/2);
+                return ((double)(a[ai]+a[aj]))/2;
             }
 
-            return (double)((b[bi]+b[bj])/2); // {a[ai],b[bi],b[bj],a[aj]}
+            return ((double)(b[bi]+b[bj]))/2; // {a[ai],b[bi],b[bj],a[aj]}
         }
 
         int aMidIndex = ai + aDiff/2;
@@ -101,5 +101,36 @@ public class MedianEqualArrays
         }
        
     }
+
+    /*public static void main(String[] args)
+    {
+       int[] a = {1,3,4,6,6,7}; 
+       int[] b = {9,10,11,12,13,13};
+
+       MedianEqualArrays medianEqualArrays = new MedianEqualArrays();
+
+       System.out.println("8 is the answer: " + medianEqualArrays.solution(a,b));
+    }*/
+
+    public static void main(String[] args)
+    {
+       int[] a = { 5,8,10,11,14,15,17 };
+       int[] b = { -17,-15,-12,0,1,2,2 };
+
+       MedianEqualArrays medianEqualArrays = new MedianEqualArrays();
+
+       System.out.println("3.5 is the answer: " + medianEqualArrays.solution(a,b));
+    }
+
+   /*public static void main(String[] args)
+   {
+     int a = 2;
+     int b = 5;
+
+     double c = ((double)(a+b))/2;
+
+     System.out.println(c);
+   }*/
+
 
 }
