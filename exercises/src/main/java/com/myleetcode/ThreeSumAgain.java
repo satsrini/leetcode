@@ -37,7 +37,7 @@ public class ThreeSumAgain
       int j = i + 1;
       int k = nums.length-1;
 
-      while(i < nums.length-2)
+      while(nums[i] <= 0 && i < nums.length-2)
       {
          while(j < k)
          {
@@ -74,7 +74,7 @@ public class ThreeSumAgain
 
    }
 
-   /*public static void main(String[] args)
+   public static void main(String[] args)
    {
       ThreeSumAgain threeSumAgain = new ThreeSumAgain();
 
@@ -82,9 +82,9 @@ public class ThreeSumAgain
 
       System.out.println(threeSumAgain.threeSum(nums));
 
-   }*/
+   }
 
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
       ThreeSumAgain threeSumAgain = new ThreeSumAgain();
 
@@ -92,7 +92,7 @@ public class ThreeSumAgain
 
       System.out.println(threeSumAgain.threeSum(nums));
 
-   }
+   }*/
 
 
 }
