@@ -24,7 +24,12 @@ public class ThreeSumAgain
          return new ArrayList<>();
       }
 
-      Arrays.sort(nums);
+      Arrays.sort(nums); // sort in ascending order
+
+      if(nums[0] > 0)
+      {
+        return new ArrayList<>(); // if the smallest number is positive, then no point continuing.
+      }
 
       List<List<Integer>> result = new ArrayList<>();
 
@@ -69,11 +74,21 @@ public class ThreeSumAgain
 
    }
 
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
       ThreeSumAgain threeSumAgain = new ThreeSumAgain();
 
       int[] nums = {-1,0,1,2,-1,-4};
+
+      System.out.println(threeSumAgain.threeSum(nums));
+
+   }*/
+
+   public static void main(String[] args)
+   {
+      ThreeSumAgain threeSumAgain = new ThreeSumAgain();
+
+      int[] nums = {4,0,2,3,-1};
 
       System.out.println(threeSumAgain.threeSum(nums));
 
