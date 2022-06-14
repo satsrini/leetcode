@@ -19,7 +19,7 @@ public class ThreeSumAgain
    public List<List<Integer>> threeSum(int[] nums)
    {
 
-      if(nums.length < 3)
+      if(nums == null || nums.length < 3)
       {
          return new ArrayList<>();
       }
@@ -29,15 +29,40 @@ public class ThreeSumAgain
       List<List<Integer>> result = new ArrayList<>();
 
       int i = 0;
-      int j = 1;
+      int j = i;
       int k = nums.length-1;
 
       while(i < nums.length-2)
       {
          while(j < k)
          {
+           if(nums[i] + nums[j] + nums[k] == 0)
+           {
+               List<Integer> internalList = new ArrayList<>();
+
+               internalList.add(nums[i]);
+               internalList.add(nums[j]);
+               internalList.add(nums[k]);
+
+               if(!result.contains(internalList)) // to remove duplicate triplets
+               {
+                  result.add(internalList);
+               }
+               j++;
+               k--;
+           }else
+           if(nums[i] + nums[j] + nums[k] > 0)
+           {
+              k--;
+           }else // less than 0
+           {
+              j++;
+           }
 
          }
+         i++;
+         j = i+1;
+         k = nums.length-1;
       }
     
       return result;
