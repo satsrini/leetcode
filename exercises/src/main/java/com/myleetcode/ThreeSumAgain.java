@@ -34,11 +34,14 @@ public class ThreeSumAgain
       List<List<Integer>> result = new ArrayList<>();
 
       int i = 0;
-      int j = i + 1;
+      int j = i+1;
       int k = nums.length-1;
 
-      while(nums[i] <= 0 && i < nums.length-2)
+      for(;nums[i] <= 0 && i < nums.length-2;i++)
       {
+         j = i+1;
+         k = nums.length-1;
+
          while(j < k)
          {
            if(nums[i] + nums[j] + nums[k] == 0)
@@ -65,7 +68,6 @@ public class ThreeSumAgain
            }
 
          }
-         i++;
          j = i+1;
          k = nums.length-1;
       }
