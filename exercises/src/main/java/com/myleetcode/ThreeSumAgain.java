@@ -34,7 +34,7 @@ public class ThreeSumAgain
       List<List<Integer>> result = new ArrayList<>();
 
       int i = 0;
-      int j = i;
+      int j = i + 1;
       int k = nums.length-1;
 
       while(i < nums.length-2)
