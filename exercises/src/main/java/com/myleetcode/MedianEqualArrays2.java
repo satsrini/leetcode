@@ -51,11 +51,10 @@ public class MedianEqualArrays2
     {
 
         
-        int aDiff = aj-ai;
+        int aDiff = aj-ai+1;
 
         if(aDiff == 1) // coming to the end, time to calculate the combined median
         {
-
 
             if(a[aj] <= b[bi]) // {a[ai],a[aj],b[bi],b[bj]}
             {
@@ -78,7 +77,7 @@ public class MedianEqualArrays2
         int aMidIndex = ai + aDiff/2;
         int bMidIndex = bi + aDiff/2;
 
-        if(a[aMidIndex] == b[bMidIndex])
+        if(a[aMidIndex] == b[bMidIndex]) // if current mid values are equal, then we go for median calculation
         {
             if(aDiff % 2 == 1) // odd length, so single medians in each array
             {
@@ -127,7 +126,7 @@ public class MedianEqualArrays2
        System.out.println("6.5 is the answer: " + medianEqualArrays2.solution(a,b));
     }*/
 
-    public static void main(String[] args)
+    /*public static void main(String[] args)
     {
 
        int[] a = { 1,4,7,8,10 };
@@ -136,7 +135,19 @@ public class MedianEqualArrays2
        MedianEqualArrays2 medianEqualArrays2 = new MedianEqualArrays2();
 
        System.out.println("again 6.5 is the answer: " + medianEqualArrays2.solution(a,b));
+    }*/
+
+    public static void main(String[] args)
+    {
+
+       int[] a = { 1,2,3,7,9,10,11,13,14};
+       int[] b = { -1,0,3,5,6,7,8,12,15};
+
+       MedianEqualArrays2 medianEqualArrays2 = new MedianEqualArrays2();
+
+       System.out.println("7 is the answer: " + medianEqualArrays2.solution(a,b));
     }
+
 
 
    /*public static void main(String[] args)
