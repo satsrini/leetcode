@@ -50,7 +50,7 @@ public class MedianEqualArrays2
     private double median(int[] a, int ai, int aj, int[] b, int bi, int bj)
     {
 
-        
+        System.out.println(ai + "  " + aj + "  " + bi + "  " + bj);
         int aDiff = aj-ai+1;
 
         if(aDiff == 1) // coming to the end, time to calculate the combined median
@@ -89,12 +89,23 @@ public class MedianEqualArrays2
            
         }
 
+        int aMiddle = aMidIndex;
+        int bMiddle = bMidIndex;
+
         if(a[aMidIndex] > b[bMidIndex])
         {
-           return median(a,ai,aMidIndex,b,bMidIndex,bj);
+           if(aDiff % 2 == 0)
+           {
+              aMiddle++;
+           }
+           return median(a,ai,aMiddle,b,bMiddle,bj);
         }else
         {
-           return median(a,aMidIndex,aj,b,bi,bMidIndex);
+           if(aDiff % 2 == 0)
+           {
+              bMiddle++;
+           }
+           return median(a,aMiddle,aj,b,bi,bMiddle);
         }
 
     }
@@ -119,7 +130,7 @@ public class MedianEqualArrays2
        System.out.println("3.5 is the answer: " + medianEqualArrays2.solution(a,b));
     }*/
 
-    /*public static void main(String[] args)
+    public static void main(String[] args)
     {
 
        int[] a = {1,4,7,8 };
@@ -128,7 +139,7 @@ public class MedianEqualArrays2
        MedianEqualArrays2 medianEqualArrays2 = new MedianEqualArrays2();
 
        System.out.println("6.5 is the answer: " + medianEqualArrays2.solution(a,b));
-    }*/
+    }
 
     /*public static void main(String[] args)
     {
@@ -141,7 +152,7 @@ public class MedianEqualArrays2
        System.out.println("again 6.5 is the answer: " + medianEqualArrays2.solution(a,b));
     }*/
 
-    public static void main(String[] args)
+    /*public static void main(String[] args)
     {
 
        int[] a = { 1,2,3,7,9,10,11,13,14};
@@ -150,7 +161,7 @@ public class MedianEqualArrays2
        MedianEqualArrays2 medianEqualArrays2 = new MedianEqualArrays2();
 
        System.out.println("7 is the answer: " + medianEqualArrays2.solution(a,b));
-    }
+    }*/
 
 
 
