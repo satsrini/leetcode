@@ -50,10 +50,9 @@ public class MedianEqualArrays2
     private double median(int[] a, int ai, int aj, int[] b, int bi, int bj)
     {
 
-        System.out.println(ai + "  " + aj + "  " + bi + "  " + bj);
         int aDiff = aj-ai+1;
 
-        if(aDiff == 1) // coming to the end, time to calculate the combined median
+        if(aDiff <= 2) // coming to the end, time to calculate the combined median
         {
 
             if(a[aj] <= b[bi]) // {a[ai],a[aj],b[bi],b[bj]}
@@ -74,12 +73,14 @@ public class MedianEqualArrays2
             return ((double)(b[bi]+b[bj]))/2; // {a[ai],b[bi],b[bj],a[aj]}
         }
 
-        int aMidIndex = ai + aDiff/2;
-        int bMidIndex = bi + aDiff/2;
+        int aDiffActual = (aDiff%2 == 0) ? (aDiff-1):aDiff;
+
+        int aMidIndex = ai + aDiffActual/2;
+        int bMidIndex = bi + aDiffActual/2;
 
         if(a[aMidIndex] == b[bMidIndex]) // if current mid values are equal, then we go for median calculation
         {
-            if(aDiff % 2 == 1) // odd length, so single medians in each array
+            if((aDiff) % 2 == 1) // odd length, so single medians in each array
             {
                return (double)a[aMidIndex];
             }else // even length
@@ -130,7 +131,7 @@ public class MedianEqualArrays2
        System.out.println("3.5 is the answer: " + medianEqualArrays2.solution(a,b));
     }*/
 
-    public static void main(String[] args)
+    /*public static void main(String[] args)
     {
 
        int[] a = {1,4,7,8 };
@@ -139,7 +140,7 @@ public class MedianEqualArrays2
        MedianEqualArrays2 medianEqualArrays2 = new MedianEqualArrays2();
 
        System.out.println("6.5 is the answer: " + medianEqualArrays2.solution(a,b));
-    }
+    }*/
 
     /*public static void main(String[] args)
     {
@@ -152,7 +153,7 @@ public class MedianEqualArrays2
        System.out.println("again 6.5 is the answer: " + medianEqualArrays2.solution(a,b));
     }*/
 
-    /*public static void main(String[] args)
+    public static void main(String[] args)
     {
 
        int[] a = { 1,2,3,7,9,10,11,13,14};
@@ -161,7 +162,7 @@ public class MedianEqualArrays2
        MedianEqualArrays2 medianEqualArrays2 = new MedianEqualArrays2();
 
        System.out.println("7 is the answer: " + medianEqualArrays2.solution(a,b));
-    }*/
+    }
 
 
 
