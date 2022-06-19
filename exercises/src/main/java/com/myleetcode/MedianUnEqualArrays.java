@@ -4,6 +4,7 @@ package com.myleetcode;
 /**
  * <h1>MedianUnEqualArrays</h1>
  * This class finds the median of two sorted integer arrays of unequal length.
+ * Leetcode - https://leetcode.com/problems/median-of-two-sorted-arrays/
  *
  * @author  Satish Srinivasan
  * @version 1.0
@@ -20,7 +21,40 @@ public class MedianUnEqualArrays
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2)
     {
+
+        if(nums1.length == 0 && nums2.length == 0)
+        {
+           return 0.0;
+        }
+
+        if(nums1.length == 0)
+        {
+           return median(nums1);
+        }
+
+        if(nums2.length == 0)
+        {
+           return median(nums2);
+        }
+
+
+        return median(nums1, nums2);
+    }
+
+    private double median(int[] a, int[] b)
+    {
         return 0.0;
+    }
+
+    private double median(int[] a)
+    {
+       int k = a.length;
+       if(k%2 ==1)
+       {
+          return a[k/2];
+       }
+
+       return ((double)(a[(k-1)/2] + a[k/2]))/2;
     }
 
     public static void main(String[] args)
