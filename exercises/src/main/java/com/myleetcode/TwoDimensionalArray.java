@@ -29,7 +29,7 @@ public class TwoDimensionalArray
     public int solution(int sx, int sy, int dx, int dy)
     {
 
-       if(sx > dx || sy < dy || (sx == dx && sy == dy))
+       if(sx > dx || sy > dy || (sx == dx && sy == dy))
        {
            return 0;
        }
@@ -44,25 +44,137 @@ public class TwoDimensionalArray
 
        if(sx == dx && sy == dy)
        {
-          return 0;
+          return 1;
        }
 
        if(sx < dx)
        {
-           count = count + 1 + paths(sx+1,sy,dx,dy);
+           count = count + paths(sx+1,sy,dx,dy); // going down
        }
  
-       if(sy > dy)
+       if(sy < dy)
        {
-           count = count + 1 + paths(sx,sy-1,dx,dy);
+           count = count + paths(sx,sy+1,dx,dy); // going right
        }
 
        return count;
     }
 
+    /*public static void main(String[] args)
+    {
+        System.out.println("Hello TwoDimensionalArray");
+
+        int sx = 0;
+        int sy = 0;
+        int dx = 0;
+        int dy = 0;
+
+        TwoDimensionalArray twoDimensionalArray = new TwoDimensionalArray();
+
+        System.out.println("Should be 0:  " + twoDimensionalArray.solution(sx,sy,dx,dy));
+    }*/
+
+    /*public static void main(String[] args)
+    {
+        System.out.println("Hello TwoDimensionalArray");
+
+        int sx = 3;
+        int sy = 2;
+        int dx = 3;
+        int dy = 3;
+
+        TwoDimensionalArray twoDimensionalArray = new TwoDimensionalArray();
+
+        System.out.println("Should be 1:  " + twoDimensionalArray.solution(sx,sy,dx,dy));
+    }*/
+
+
+    /*public static void main(String[] args)
+    {
+        System.out.println("Hello TwoDimensionalArray");
+
+        int sx = 2;
+        int sy = 2;
+        int dx = 3;
+        int dy = 2;
+
+        TwoDimensionalArray twoDimensionalArray = new TwoDimensionalArray();
+
+        System.out.println("Should be 1 again:  " + twoDimensionalArray.solution(sx,sy,dx,dy));
+    }*/
+
+
+    /*public static void main(String[] args)
+    {
+        System.out.println("Hello TwoDimensionalArray");
+
+        int sx = 3;
+        int sy = 2;
+        int dx = 4;
+        int dy = 3;
+
+        TwoDimensionalArray twoDimensionalArray = new TwoDimensionalArray();
+
+        System.out.println("Should be 2:  " + twoDimensionalArray.solution(sx,sy,dx,dy));
+    }*/
+
+    /*public static void main(String[] args)
+    {
+        System.out.println("Hello TwoDimensionalArray");
+
+        int sx = 2;
+        int sy = 1;
+        int dx = 3;
+        int dy = 3;
+
+        TwoDimensionalArray twoDimensionalArray = new TwoDimensionalArray();
+
+        System.out.println("Should be 3:  " + twoDimensionalArray.solution(sx,sy,dx,dy));
+    }*/
+
+    /*public static void main(String[] args)
+    {
+        System.out.println("Hello TwoDimensionalArray");
+
+        int sx = 1;
+        int sy = 0;
+        int dx = 3;
+        int dy = 2;
+
+        TwoDimensionalArray twoDimensionalArray = new TwoDimensionalArray();
+
+        System.out.println("Should be 6:  " + twoDimensionalArray.solution(sx,sy,dx,dy));
+    }*/
+
+
     public static void main(String[] args)
     {
         System.out.println("Hello TwoDimensionalArray");
+
+        int sx = 0;
+        int sy = 0;
+        int dx = 4;
+        int dy = 3;
+
+        TwoDimensionalArray twoDimensionalArray = new TwoDimensionalArray();
+
+        System.out.println("Should be BIG:  " + twoDimensionalArray.solution(sx,sy,dx,dy));
     }
+
+
+    /*public static void main(String[] args)
+    {
+        System.out.println("Hello TwoDimensionalArray");
+
+        int sx = 4;
+        int sy = 3;
+        int dx = 0;
+        int dy = 0;
+
+        TwoDimensionalArray twoDimensionalArray = new TwoDimensionalArray();
+
+        System.out.println("Should be 0 again:  " + twoDimensionalArray.solution(sx,sy,dx,dy));
+    }*/
+
 
 }
