@@ -54,14 +54,15 @@ public class TwoDimensionalArrayMaxCost
 
        if(sx < dx && sy < dy) // cost becomes 3
        {
-          calculateMaxCost(sx+1,sy,dx,dy,cost+3); // I will prefer to go down since going down costs more than going right
+          calculateMaxCost(sx+1,sy,dx,dy,cost+3); // going down 
+          calculateMaxCost(sx,sy+1,dx,dy,cost+3); // going right
        }else
        if(sx < dx) // cost becomes 2
        {
           calculateMaxCost(sx+1,sy,dx,dy,cost+2); // going down as the only option
        }else // cost becomes 1
        {
-          calculateMaxCost(sx+1,sy,dx,dy,cost+1); // going right as the only option
+          calculateMaxCost(sx,sy+1,dx,dy,cost+1); // going right as the only option
        }
 
    }
