@@ -43,6 +43,27 @@ public class TwoDimensionalArrayMaxCost
    private void calculateMaxCost(int sx, int sy, int dx, int dy, int cost)
    {
 
+       if(sx == dx && sy == dy) // target found
+       {
+           if(cost > maxCost)
+           {
+              maxCost = cost;
+           }
+           return;
+       }
+
+       if(sx < dx && sy < dy) // cost becomes 3
+       {
+          calculateMaxCost(sx+1,sy,dx,dy,cost+3); // I will prefer to go down since going down costs more than going right
+       }else
+       if(sx < dx) // cost becomes 2
+       {
+          calculateMaxCost(sx+1,sy,dx,dy,cost+2); // going down as the only option
+       }else // cost becomes 1
+       {
+          calculateMaxCost(sx+1,sy,dx,dy,cost+1); // going right as the only option
+       }
+
    }
 
    public static void main(String[] args)
