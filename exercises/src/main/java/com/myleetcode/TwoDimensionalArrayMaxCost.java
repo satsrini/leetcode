@@ -19,6 +19,31 @@ package com.myleetcode;
 public class TwoDimensionalArrayMaxCost
 {
 
+   private int maxCost = 0;
+
+   public TwoDimensionalArrayMaxCost()
+   {
+
+   }
+
+   public int solution(int sx, int sy, int dx, int dy)
+   {
+
+      if(sx < dx || sy < dy || (sx == dx && sy == dy))
+      {
+         return 0;
+      }
+
+      int cost = 0;
+      calculateMaxCost(sx,sy,dx,dy,cost);
+
+      return maxCost;
+   }
+
+   private void calculateMaxCost(int sx, int sy, int dx, int dy, int cost)
+   {
+
+   }
 
    public static void main(String[] args)
    {
