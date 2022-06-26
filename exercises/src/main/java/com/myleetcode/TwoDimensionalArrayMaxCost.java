@@ -29,7 +29,7 @@ public class TwoDimensionalArrayMaxCost
    public int solution(int sx, int sy, int dx, int dy)
    {
 
-      if(sx < dx || sy < dy || (sx == dx && sy == dy))
+      if(sx > dx || sy > dy || (sx == dx && sy == dy))
       {
          return 0;
       }
@@ -67,9 +67,82 @@ public class TwoDimensionalArrayMaxCost
 
    }
 
+   /*public static void main(String[] args)
+   {
+       System.out.println("Hello TwoDimensionalArrayMaxCost");
+
+       TwoDimensionalArrayMaxCost twoDimensionalArrayMaxCost
+                                         = new TwoDimensionalArrayMaxCost();
+
+       int sx=0;
+       int sy=0;
+       int dx=0;
+       int dy=0;       
+
+       System.out.println("Should be 0:   " + twoDimensionalArrayMaxCost.solution(sx,sy,dx,dy));
+   }*/
+
+   /*public static void main(String[] args)
+   {
+       System.out.println("Hello TwoDimensionalArrayMaxCost");
+
+       TwoDimensionalArrayMaxCost twoDimensionalArrayMaxCost
+                                         = new TwoDimensionalArrayMaxCost();
+
+       int sx=3;
+       int sy=2;
+       int dx=4;
+       int dy=3;
+
+       System.out.println("Should be 5:   " + twoDimensionalArrayMaxCost.solution(sx,sy,dx,dy));
+   }*/
+
+
    public static void main(String[] args)
    {
        System.out.println("Hello TwoDimensionalArrayMaxCost");
+
+       TwoDimensionalArrayMaxCost twoDimensionalArrayMaxCost
+                                         = new TwoDimensionalArrayMaxCost();
+
+       int sx=0;
+       int sy=0;
+       int dx=4;
+       int dy=3;
+
+       System.out.println("Should be 20:   " + twoDimensionalArrayMaxCost.solution(sx,sy,dx,dy));
    }
+
+   /*public static void main(String[] args)
+   {
+       System.out.println("Hello TwoDimensionalArrayMaxCost");
+
+       TwoDimensionalArrayMaxCost twoDimensionalArrayMaxCost
+                                         = new TwoDimensionalArrayMaxCost();
+
+       int sx=2;
+       int sy=2;
+       int dx=3;
+       int dy=2;
+aaasdsad
+       System.out.println("Should be 2:   " + twoDimensionalArrayMaxCost.solution(sx,sy,dx,dy));
+   }*/
+
+   /*public static void main(String[] args)
+   {
+       System.out.println("Hello TwoDimensionalArrayMaxCost");
+
+       TwoDimensionalArrayMaxCost twoDimensionalArrayMaxCost
+                                         = new TwoDimensionalArrayMaxCost();
+
+       int sx=2;
+       int sy=2;
+       int dx=3;
+       int dy=1;
+
+       System.out.println("Should be 0 again:   " + twoDimensionalArrayMaxCost.solution(sx,sy,dx,dy));
+   }*/
+
+
 
 }
