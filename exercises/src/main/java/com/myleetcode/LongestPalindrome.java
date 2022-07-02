@@ -63,7 +63,7 @@ public class LongestPalindrome
     private int getMaxPalindromeLength(String s, int a, int b)
     {
 
-        if(s.charAt(a) != s.charAt(b))
+        if(b < s.length() && s.charAt(a) != s.charAt(b))
         {
            return 1;
         }
@@ -85,6 +85,13 @@ public class LongestPalindrome
     public static void main(String[] args)
     {
        System.out.println("Hello Palindrome");
+
+       String s = "babad";
+       
+       LongestPalindrome longestPalindrome = new LongestPalindrome();
+
+       System.out.println("Should be babad " + longestPalindrome.longestPalindrome(s));
+
     }
 
 }
