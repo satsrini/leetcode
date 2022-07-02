@@ -38,10 +38,10 @@ public class MedianUnEqualArrays
         }
 
 
-        return median(nums1, nums2);
+        return median(nums1, nums2, 0, nums1.length-1, 0, nums2.length-1);
     }
 
-    private double median(int[] a, int[] b)
+    private double median(int[] a, int[] b, int ai, int aj, int bi, int bj)
     {
         return 0.0;
     }
@@ -49,7 +49,7 @@ public class MedianUnEqualArrays
     private double median(int[] a)
     {
        int k = a.length;
-       if(k%2 ==1)
+       if(k%2 ==1) // length is odd, so middle number
        {
           return a[k/2];
        }
