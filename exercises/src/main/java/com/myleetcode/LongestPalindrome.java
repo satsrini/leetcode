@@ -21,6 +21,24 @@ public class LongestPalindrome
 
     }
 
+    public String longestPalindrome(String s)
+    {
+        if(s == null | s.length() == 0)
+        {
+           return "";
+        }
+
+        int start = 0;
+        int end = 0;
+
+
+
+
+  
+       return s.substring(start,end+1);
+
+    }
+
    
     public static void main(String[] args)
     {
