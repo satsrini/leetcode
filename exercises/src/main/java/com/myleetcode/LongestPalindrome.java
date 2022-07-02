@@ -38,6 +38,7 @@ public class LongestPalindrome
 
            int length = Math.max(length1,length2);
 
+
            if(length > (end-start+1))
            {
               if(length % 2 == 1)
@@ -53,8 +54,6 @@ public class LongestPalindrome
            }
 
         }
-
-
   
        return s.substring(start,end+1);
 
@@ -71,13 +70,16 @@ public class LongestPalindrome
         int l = a;
         int r = b;
 
-        while(l > 0 && r < s.length() && s.charAt(l) == s.charAt(r))
+        int length = 0;
+
+        while(l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r))
         {
+           length = r-l+1;
            l--;
            r++;
         }       
 
-        return r-l+1;
+        return length;
 
     }
 
@@ -90,7 +92,7 @@ public class LongestPalindrome
        
        LongestPalindrome longestPalindrome = new LongestPalindrome();
 
-       System.out.println("Should be babad " + longestPalindrome.longestPalindrome(s));
+       System.out.println("Should be bab " + longestPalindrome.longestPalindrome(s));
 
     }
 
