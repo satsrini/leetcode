@@ -84,7 +84,7 @@ public class LongestPalindrome
     }
 
    
-    public static void main(String[] args)
+    /*public static void main(String[] args)
     {
        System.out.println("Hello Palindrome");
 
@@ -94,6 +94,19 @@ public class LongestPalindrome
 
        System.out.println("Should be bab " + longestPalindrome.longestPalindrome(s));
 
+    }*/
+
+    public static void main(String[] args)
+    {
+       System.out.println("Hello Palindrome");
+
+       String s = "cbbd";
+
+       LongestPalindrome longestPalindrome = new LongestPalindrome();
+
+       System.out.println("Should be bb " + longestPalindrome.longestPalindrome(s));
+
     }
+
 
 }
