@@ -9,7 +9,7 @@ package com.myleetcode;
  *
  * @author  Satish Srinivasan
  * @version 1.0
- * @since   2022-07-02
+ * @since   2022-07-03
  */
 
 public class ZigzagConversion
@@ -17,6 +17,20 @@ public class ZigzagConversion
 
     public ZigzagConversion()
     {
+
+    }
+
+    public String convert(String s, int numRows)
+    {
+
+       if(s == null || s.length() <= numRows )
+       {
+          return s;
+       }
+
+       StringBuilder sbuilder = new StringBuilder();
+
+       return sbuilder.toString();
 
     }
 
