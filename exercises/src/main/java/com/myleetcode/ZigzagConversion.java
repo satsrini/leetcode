@@ -30,6 +30,11 @@ public class ZigzagConversion
 
        StringBuilder sbuilder = new StringBuilder();
 
+       for(int i = 0; i < numRows; i++)
+       {
+           sbuilder.append(s.charAt(i));
+       }
+
        return sbuilder.toString();
 
     }
