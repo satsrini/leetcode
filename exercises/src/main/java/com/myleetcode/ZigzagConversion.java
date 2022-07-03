@@ -45,7 +45,6 @@ public class ZigzagConversion
               {
                 if((i+j) < s.length())
                 {
-                   System.out.println("inside while1, I is " + i + ", J is " + j);
                    sbuilder.append(s.charAt(i+j));
                 }else
                 {
@@ -62,7 +61,6 @@ public class ZigzagConversion
 
               if((i+j) < s.length())
               {
-                 System.out.println("inside while2, I is " + i + ", J is " + j);
                  sbuilder.append(s.charAt(i+j));
               }else
               {
