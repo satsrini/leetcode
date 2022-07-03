@@ -33,6 +33,32 @@ public class ZigzagConversion
        for(int i = 0; i < numRows; i++)
        {
            sbuilder.append(s.charAt(i));
+           int j = 0;
+      
+           while(j < s.length())
+           {
+
+              j = 2*numRows-2*(i+1);
+              
+              if(j < s.length())
+              {
+                 sbuilder.append(s.charAt(j));
+              }else
+              {
+                 break;
+              }
+
+              j += 2*i;
+
+              if(j < s.length())
+              {
+                 sbuilder.append(s.charAt(j));
+              }else
+              {
+                 break;
+              }
+ 
+           }
        }
 
        return sbuilder.toString();
