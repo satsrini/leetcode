@@ -35,24 +35,35 @@ public class ZigzagConversion
            sbuilder.append(s.charAt(i));
            int j = 0;
       
-           while(j < s.length())
+           while((i+j) < s.length())
            {
 
-              j = 2*numRows-2*(i+1);
+              j += 2*numRows-2*(i+1);
+
               
-              if(j < s.length())
+              if(i < (numRows-1) && j != 0) 
               {
-                 sbuilder.append(s.charAt(j));
-              }else
+                if((i+j) < s.length())
+                {
+                   System.out.println("inside while1, I is " + i + ", J is " + j);
+                   sbuilder.append(s.charAt(i+j));
+                }else
+                {
+                   break;
+                }
+              }
+
+              if(i == 0)
               {
-                 break;
+                 continue;
               }
 
               j += 2*i;
 
-              if(j < s.length())
+              if((i+j) < s.length())
               {
-                 sbuilder.append(s.charAt(j));
+                 System.out.println("inside while2, I is " + i + ", J is " + j);
+                 sbuilder.append(s.charAt(i+j));
               }else
               {
                  break;
@@ -65,9 +76,32 @@ public class ZigzagConversion
 
     }
 
+    /*public static void main(String[] args)
+    {
+       System.out.println("Hello Zigzag conversion");
+
+       String s = "PAYPALISHIRING";
+
+       ZigzagConversion zigzagConversion = new ZigzagConversion();
+
+       System.out.println("Should be PAHNAPLSIIGYIR   " + zigzagConversion.convert(s,3));
+
+    }*/
+
     public static void main(String[] args)
     {
        System.out.println("Hello Zigzag conversion");
+
+       String s = "PAYPALISHIRING";
+
+       ZigzagConversion zigzagConversion = new ZigzagConversion();
+
+       System.out.println("Should be PINALSIGYAHRPI   " + zigzagConversion.convert(s,4));
+
     }
 
+
 }
+
+
+
