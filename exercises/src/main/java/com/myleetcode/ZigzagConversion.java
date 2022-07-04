@@ -23,7 +23,7 @@ public class ZigzagConversion
     public String convert(String s, int numRows)
     {
 
-       if(s == null || s.length() <= numRows )
+       if(s == null || s.length() <= numRows || numRows==1)
        {
           return s;
        }
@@ -79,7 +79,7 @@ public class ZigzagConversion
 
     }*/
 
-    public static void main(String[] args)
+    /*public static void main(String[] args)
     {
        System.out.println("Hello Zigzag conversion");
 
@@ -89,7 +89,20 @@ public class ZigzagConversion
 
        System.out.println("Should be PINALSIGYAHRPI   " + zigzagConversion.convert(s,4));
 
+    }*/
+
+    public static void main(String[] args)
+    {
+       System.out.println("Hello Zigzag conversion");
+
+       String s = "AB";
+
+       ZigzagConversion zigzagConversion = new ZigzagConversion();
+
+       System.out.println("Should be AB   " + zigzagConversion.convert(s,1));
+
     }
+
 
 
 }
