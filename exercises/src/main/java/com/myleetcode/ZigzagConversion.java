@@ -79,7 +79,7 @@ public class ZigzagConversion
 
     }*/
 
-    /*public static void main(String[] args)
+    public static void main(String[] args)
     {
        System.out.println("Hello Zigzag conversion");
 
@@ -89,9 +89,9 @@ public class ZigzagConversion
 
        System.out.println("Should be PINALSIGYAHRPI   " + zigzagConversion.convert(s,4));
 
-    }*/
+    }
 
-    public static void main(String[] args)
+    /*public static void main(String[] args)
     {
        System.out.println("Hello Zigzag conversion");
 
@@ -101,7 +101,7 @@ public class ZigzagConversion
 
        System.out.println("Should be AB   " + zigzagConversion.convert(s,1));
 
-    }
+    }*/
 
 
 
