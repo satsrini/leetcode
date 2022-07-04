@@ -26,8 +26,24 @@ public class ReverseInteger
          return 0;
       }
 
-      int result = 0;
+      StringBuilder resultStrBuilder = new StringBuilder();
 
+      int result = Integer.parseInt(resultStrBuilder.toString());
+
+      int y = x;
+
+      while(y/10 == 0)
+      {
+         resultStrBuilder.append(y%10);
+         y /= 10;
+      }
+
+      resultStrBuilder.append(y%10);
+
+      if(x < 0)
+      {
+        result = -1*result;
+      }
 
       return result;
    }
