@@ -44,6 +44,13 @@ public class ReverseInteger
 
       int result = 0;
 
+      int size = stack.size();
+
+      for(int i = 0; i < size; i++)
+      {
+         result += stack.pop()*Math.pow(10,i);
+      }
+
       if(x < 0)
       {
         result = -1*result;
