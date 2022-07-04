@@ -1,5 +1,7 @@
 package com.myleetcode;
 
+import java.util.Stack;
+
 /**
  * <h1>ReverseInteger.java</h1>
  * This class reverses the given Integer
@@ -26,25 +28,21 @@ public class ReverseInteger
          return 0;
       }
 
-      StringBuilder resultStrBuilder = new StringBuilder();
+      Stack<Integer> stack = new Stack<>();
 
 
-      int y = x;
+      int y = Math.abs(x);
 
-      if(x < 0)
-      {
-        y = -1*y;
-      }
 
       while(y/10 != 0)
       {
-         resultStrBuilder.append(y%10);
+         stack.push(y%10);
          y /= 10;
       }
 
-      resultStrBuilder.append(y%10);
+      stack.push(y%10);
 
-      int result = Integer.parseInt(resultStrBuilder.toString());
+      int result = 0;
 
       if(x < 0)
       {
@@ -63,13 +61,23 @@ public class ReverseInteger
       System.out.println("Should be 1447 " + reverseInteger.reverse(7441));
    }*/
 
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
       System.out.println("Hello Reverse Integer");
 
       ReverseInteger reverseInteger = new ReverseInteger();
 
       System.out.println("Should be -859 " + reverseInteger.reverse(-958));
+   }*/
+
+
+   public static void main(String[] args)
+   {
+      System.out.println("Hello Reverse Integer");
+
+      ReverseInteger reverseInteger = new ReverseInteger();
+
+      System.out.println("Should be 0 " + reverseInteger.reverse(1534236469));
    }
 
 
