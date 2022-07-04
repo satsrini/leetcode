@@ -28,17 +28,23 @@ public class ReverseInteger
 
       StringBuilder resultStrBuilder = new StringBuilder();
 
-      int result = Integer.parseInt(resultStrBuilder.toString());
 
       int y = x;
 
-      while(y/10 == 0)
+      if(x < 0)
+      {
+        y = -1*y;
+      }
+
+      while(y/10 != 0)
       {
          resultStrBuilder.append(y%10);
          y /= 10;
       }
 
       resultStrBuilder.append(y%10);
+
+      int result = Integer.parseInt(resultStrBuilder.toString());
 
       if(x < 0)
       {
@@ -48,10 +54,24 @@ public class ReverseInteger
       return result;
    }
 
+   /*public static void main(String[] args)
+   {
+      System.out.println("Hello Reverse Integer");
+
+      ReverseInteger reverseInteger = new ReverseInteger();
+
+      System.out.println("Should be 1447 " + reverseInteger.reverse(7441));
+   }*/
+
    public static void main(String[] args)
    {
       System.out.println("Hello Reverse Integer");
+
+      ReverseInteger reverseInteger = new ReverseInteger();
+
+      System.out.println("Should be -859 " + reverseInteger.reverse(-958));
    }
+
 
 
 }
