@@ -28,49 +28,42 @@ public class ZigzagConversion
           return s;
        }
 
-       StringBuilder sbuilder = new StringBuilder();
+       StringBuilder[] rows = new StringBuilder[numRows];
 
-       for(int i = 0; i < numRows; i++)
+       for(int i = 0; i < rows.length; i++)
        {
-           sbuilder.append(s.charAt(i));
-           int j = 0;
+          rows[i] = new StringBuilder();
+       }
       
-           while((i+j) < s.length())
-           {
+       boolean goingDown = false;
+       StringBuilder result = new StringBuilder();
+       int currentRow = 0;
 
-              j += 2*numRows-2*(i+1);
+       for(int i = 0; i < s.length(); i++)
+       {
+          StringBuilder row = rows[currentRow];
+          row.append(s.charAt(i));
 
-              
-              if(i < (numRows-1) && j != 0) 
-              {
-                if((i+j) < s.length())
-                {
-                   sbuilder.append(s.charAt(i+j));
-                }else
-                {
-                   break;
-                }
-              }
+          if(currentRow == 0 || currentRow == numRows-1)
+          {
+              goingDown = !goingDown;
+          }
 
-              if(i == 0)
-              {
-                 continue;
-              }
+          if(goingDown)
+          {
+             currentRow++;
+          }else
+          {
+             currentRow--;
+          }
+       }      
 
-              j += 2*i;
-
-              if((i+j) < s.length())
-              {
-                 sbuilder.append(s.charAt(i+j));
-              }else
-              {
-                 break;
-              }
- 
-           }
+       for(StringBuilder row:rows)
+       {
+          result.append(row);
        }
 
-       return sbuilder.toString();
+       return result.toString();
 
     }
 
