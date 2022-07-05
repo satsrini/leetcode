@@ -27,7 +27,7 @@ public class Misc
       System.out.println("Should be 85917 " + Math.abs(x));
    }*/
 
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
 
       Stack<Integer> stack = new Stack<>();
@@ -45,6 +45,12 @@ public class Misc
          System.out.println(stack.pop());
       }
      
+   }*/
+
+   public static void main(String[] args)
+   {
+      System.out.println(Integer.MAX_VALUE);
+      System.out.println(Integer.MIN_VALUE);
    }
 
 

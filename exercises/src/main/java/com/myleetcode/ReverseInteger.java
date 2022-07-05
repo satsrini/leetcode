@@ -42,21 +42,21 @@ public class ReverseInteger
 
       stack.push(y%10);
 
-      int result = 0;
+      long resultLong = 0L;
 
       int size = stack.size();
 
       for(int i = 0; i < size; i++)
       {
-         result += stack.pop()*Math.pow(10,i);
+         resultLong += stack.pop()*Math.pow(10,i);
       }
 
       if(x < 0)
       {
-        result = -1*result;
+        resultLong = -1*resultLong;
       }
 
-      return result;
+      return (resultLong > Integer.MAX_VALUE || resultLong < Integer.MIN_VALUE) ? 0 : (int)resultLong;
    }
 
    /*public static void main(String[] args)
@@ -86,7 +86,4 @@ public class ReverseInteger
 
       System.out.println("Should be 0 " + reverseInteger.reverse(1534236469));
    }
-
-
-
 }
