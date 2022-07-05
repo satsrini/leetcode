@@ -1,6 +1,5 @@
 package com.myleetcode;
 
-import java.util.Stack;
 
 /**
  * <h1>ReverseInteger.java</h1>
@@ -28,35 +27,29 @@ public class ReverseInteger
          return 0;
       }
 
-      Stack<Integer> stack = new Stack<>();
+      int result = 0;
 
+      int pop = 0;
 
-      int y = Math.abs(x);
-
-
-      while(y/10 != 0)
+      while(x != 0)
       {
-         stack.push(y%10);
-         y /= 10;
+         
+         pop = x%10;
+         x /= 10;
+
+         if(result > Integer.MAX_VALUE/10 || 
+                  (result == Integer.MAX_VALUE/10 && pop > 7) ||
+                             result < Integer.MIN_VALUE/10 ||  
+                                    (result == Integer.MIN_VALUE/10 && pop < -8) ) // overflow condition
+         {
+             return 0;
+         }
+
+         result = result*10 + pop;
+
       }
 
-      stack.push(y%10);
-
-      long resultLong = 0L;
-
-      int size = stack.size();
-
-      for(int i = 0; i < size; i++)
-      {
-         resultLong += stack.pop()*Math.pow(10,i);
-      }
-
-      if(x < 0)
-      {
-        resultLong = -1*resultLong;
-      }
-
-      return (resultLong > Integer.MAX_VALUE || resultLong < Integer.MIN_VALUE) ? 0 : (int)resultLong;
+      return result;
    }
 
    /*public static void main(String[] args)
@@ -78,12 +71,32 @@ public class ReverseInteger
    }*/
 
 
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
       System.out.println("Hello Reverse Integer");
 
       ReverseInteger reverseInteger = new ReverseInteger();
 
       System.out.println("Should be 0 " + reverseInteger.reverse(1534236469));
+   }*/
+
+   /*public static void main(String[] args)
+   {
+      System.out.println("Hello Reverse Integer");
+
+      ReverseInteger reverseInteger = new ReverseInteger();
+
+      System.out.println("Should be 0 " + reverseInteger.reverse(2147483647));
+   }*/
+
+   public static void main(String[] args)
+   {
+      System.out.println("Hello Reverse Integer");
+
+      ReverseInteger reverseInteger = new ReverseInteger();
+
+      System.out.println("Should be 0 " + reverseInteger.reverse(-2147483648));
    }
+
+
 }
