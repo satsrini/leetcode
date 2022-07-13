@@ -20,7 +20,7 @@ public class DPSample
    public int solution(int N)
    {
 
-       if(N == 0)
+       if(N <= 0)
        {
           return 0;
        }
