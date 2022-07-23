@@ -2,7 +2,8 @@ package com.myleetcode;
 
 /**
  * <h1>ClimbingStairs.java</h1>
- * This class implements ClimbingStairs solution using Dynamic Programming
+ * This class implements ClimbingStairs solution using Dynamic Programming.
+ * It uses the formula - DP[n] = DP[n-1] + DP[n-2]
  * <p> ClimbingStairs qn can be found in https://leetcode.com/problems/climbing-stairs/
  *
  *
