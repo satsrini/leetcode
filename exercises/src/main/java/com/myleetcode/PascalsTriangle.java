@@ -1,5 +1,9 @@
 package com.myleetcode;
 
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * <h1>PascalsTriangle.java</h1>
  * This class implements PascalsTriangle solution using Dynamic Programming.
@@ -18,9 +22,75 @@ public class PascalsTriangle
 
   }
 
+  public List<List<Integer>> generate(int numRows)
+  {
+     if(numRows <= 0)
+     {
+        return null;
+     }
+
+     if(numRows == 1)
+     {
+        return getForOne();
+     }
+
+     List<List<List<Integer>>> DP = new ArrayList<>();
+
+     DP.add(getForOne());
+
+     for(int i = 1; i < numRows; i++)
+     {
+        List<Integer> currentList = new ArrayList<>();
+
+        currentList.add(1);
+
+
+        List<Integer> prev = DP.get(i-1).get(DP.get(i-1).size()-1);
+        
+        for(int j = 1; j < i-1; j++)
+        {
+           currentList.add(j,prev.get(j-1) + prev.get(j));
+        }
+        currentList.add(1);
+
+        DP.add(new ArrayList<>());
+        DP.get(i).addAll(DP.get(i-1));
+        DP.get(i).add(currentList);
+        
+
+     }
+
+     return DP.get(numRows-1);
+  }
+
+  private List<List<Integer>> getForOne()
+  {
+        Integer[] result = {1};
+  
+        List<List<Integer>> allResults = new ArrayList<>();
+        allResults.add(Arrays.asList(result));
+
+        return allResults;
+  }
+
+  private List<List<Integer>> getForTwo()
+  {
+
+        List<List<Integer>> allResults = new ArrayList<>();
+
+        Integer[] result = {1};
+        allResults.add(Arrays.asList(result));
+
+        Integer[] result2 = {1,1};        
+        allResults.add(Arrays.asList(result2));
+
+        return allResults;
+  }
+
   public static void main(String[] args)
   {
-     System.out.println("Hello Pascals Triangle");
+        PascalsTriangle pascalsTriangle = new PascalsTriangle();
+        System.out.println(pascalsTriangle.generate(5));
   }
 
 }
