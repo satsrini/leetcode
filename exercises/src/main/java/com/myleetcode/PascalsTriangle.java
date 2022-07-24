@@ -37,24 +37,24 @@ public class PascalsTriangle
      List<List<List<Integer>>> DP = new ArrayList<>();
 
      DP.add(getForOne());
+     DP.add(getForTwo());
 
-     for(int i = 1; i < numRows; i++)
+     for(int i = 2; i < numRows; i++)
      {
         List<Integer> currentList = new ArrayList<>();
 
         currentList.add(1);
 
-
         List<Integer> prev = DP.get(i-1).get(DP.get(i-1).size()-1);
         
-        for(int j = 1; j < i-1; j++)
+        for(int j = 1; j < i; j++)
         {
            currentList.add(j,prev.get(j-1) + prev.get(j));
         }
         currentList.add(1);
 
         DP.add(new ArrayList<>());
-        DP.get(i).addAll(DP.get(i-1));
+        DP.get(i).addAll(DP.get(i-1)); // This is where Dynamic Programming is used
         DP.get(i).add(currentList);
         
 
