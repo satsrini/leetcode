@@ -34,6 +34,12 @@ public class PascalsTriangle
         return getForOne();
      }
 
+     if(numRows == 2)
+     {
+        return getForTwo();
+     }
+
+
      List<List<List<Integer>>> DP = new ArrayList<>();
 
      DP.add(getForOne());
@@ -87,10 +93,17 @@ public class PascalsTriangle
         return allResults;
   }
 
-  public static void main(String[] args)
+  /*public static void main(String[] args)
   {
         PascalsTriangle pascalsTriangle = new PascalsTriangle();
         System.out.println(pascalsTriangle.generate(5));
+  }*/
+
+  public static void main(String[] args)
+  {
+        PascalsTriangle pascalsTriangle = new PascalsTriangle();
+        System.out.println(pascalsTriangle.generate(2));
   }
+
 
 }
