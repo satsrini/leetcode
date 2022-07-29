@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * <h1>Triangle.java</h1>
- * This class implements Triangle solution using Dynamic Programming.
+ * This class implements Triangle solution using Recursion.
  * <p> Triangle qn can be found in https://leetcode.com/problems/triangle/
  *
  *
@@ -29,29 +29,7 @@ public class Triangle
         return 0;
      }
 
-     int sum = triangle.get(0).get(0);
-
-     if(triangle.size() == 1)
-     {
-        return sum;
-     }
-
-     int[] DPindex = new int[triangle.size()];
-
-     DPindex[0] = 0;
-
-     for(int i = 1; i < DPindex.length; i++)
-     {
-        List<Integer> currentRow = triangle.get(i);
-        DPindex[i] = DPindex[i-1]; // We are DPing here
-
-        if(currentRow.get(DPindex[i]) > currentRow.get(DPindex[i]+1))
-        {
-          DPindex[i]++;
-        }  
- 
-        sum += currentRow.get(DPindex[i]);
-     }     
+     int sum = 0;
 
      return sum;
   }
