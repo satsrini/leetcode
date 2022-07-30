@@ -29,9 +29,8 @@ public class Triangle
         return 0;
      }
 
-     int sum = min(triangle, 0, 0);
+     return min(triangle, 0, 0);
 
-     return sum;
   }
 
   private int min(List<List<Integer>> triangle, int row, int index)
