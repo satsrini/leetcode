@@ -29,9 +29,19 @@ public class Triangle
         return 0;
      }
 
-     int sum = 0;
+     int sum = min(triangle, 0, 0);
 
      return sum;
+  }
+
+  private int min(List<List<Integer>> triangle, int row, int index)
+  {
+     if(row >= triangle.size())
+     {
+        return 0;
+     }
+
+     return triangle.get(row).get(index) + Math.min(min(triangle, row+1, index), min(triangle, row+1, index+1));
   }
 
   public static void main(String[] args)
