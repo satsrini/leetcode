@@ -17,17 +17,22 @@ import java.util.ArrayList;
 public class Triangle
 {
 
+  private Integer[][] cache;
+
   public Triangle()
   {
-
+     
   }
 
   public int minimumTotal(List<List<Integer>> triangle)
   {
+
      if(triangle == null || triangle.size() == 0)
      {
         return 0;
      }
+
+     cache = new Integer[triangle.size()][triangle.size()];
 
      return min(triangle, 0, 0);
 
@@ -40,7 +45,12 @@ public class Triangle
         return 0;
      }
 
-     return triangle.get(row).get(index) + Math.min(min(triangle, row+1, index), min(triangle, row+1, index+1));
+     if(cache[row][index] == null)
+     {
+       cache[row][index] = triangle.get(row).get(index) + Math.min(min(triangle, row+1, index), min(triangle, row+1, index+1));
+     }
+
+     return cache[row][index];
   }
 
   public static void main(String[] args)
@@ -75,6 +85,31 @@ public class Triangle
      System.out.println("Should be 11:  " + triangleObject.minimumTotal(triangle));
 
   }
+
+  /*public static void main(String[] args)
+  {
+     List<List<Integer>> triangle = new ArrayList<>();
+
+     List<Integer> row = new ArrayList<>();
+     row.add(-1);
+     triangle.add(row);
+
+     row = new ArrayList<>();
+     row.add(2);
+     row.add(3);
+     triangle.add(row);
+
+     row = new ArrayList<>();
+     row.add(1);
+     row.add(-1);
+     row.add(-3);
+     triangle.add(row);
+
+     Triangle triangleObject = new Triangle();
+     System.out.println("Should be -1:  " + triangleObject.minimumTotal(triangle));
+
+
+  }*/
 
 
 }
