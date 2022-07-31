@@ -29,20 +29,12 @@ public class BuyAndSellStock2
       int max = 0;
       int buy = 0;
 
-      for(int i = 0; i < prices.length; i++)
+      for(int i = 0; i < prices.length-1; i++)
       {
-        if(prices[i] < prices[buy])
-        {
-           buy = i;
-           continue;
-        }
-
-        if(i == prices.length-1 || prices[i] > prices[i+1])
-        {
-           max += prices[i]-prices[buy];
-           buy = i+1;
-        }
-
+          if(prices[i] < prices[i+1])
+          {
+             max += prices[i+1] - prices[i];
+          }
       }
 
       return max; 
