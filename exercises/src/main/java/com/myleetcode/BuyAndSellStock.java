@@ -28,7 +28,6 @@ public class BuyAndSellStock
        int max=0;
 
        int begin = 0;
-       int end = prices.length-1;
 
        for(int i = 0; i < prices.length;i++)
        {
@@ -38,10 +37,7 @@ public class BuyAndSellStock
              continue;
           }
 
-          if(prices[i] - prices[begin] > max)
-          {
-             max = prices[i] - prices[begin];
-          }
+          max = Math.max(max,prices[i] - prices[begin]);
        }
 
 
