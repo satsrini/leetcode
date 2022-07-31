@@ -19,8 +19,44 @@ public class BuyAndSellStock2
 
    }
 
+   public int maxProfit(int[] prices)
+   {
+      if(prices == null || prices.length <= 1)
+      {
+         return 0;
+      }
+
+      int max = 0;
+      int buy = 0;
+
+      for(int i = 0; i < prices.length; i++)
+      {
+        if(prices[i] < prices[buy])
+        {
+           buy = i;
+           continue;
+        }
+
+        if(i == prices.length-1 || prices[i] > prices[i+1])
+        {
+           max += prices[i]-prices[buy];
+           buy = i+1;
+        }
+
+      }
+
+      return max; 
+   }
+
    public static void main(String[] args)
    {
       System.out.println("Hello BuyAndSellStock2");
+
+      BuyAndSellStock2 buyAndSellStock2 = new BuyAndSellStock2();
+
+      int[] prices = {7,1,5,3,6,4};
+
+      System.out.println("Should be 7: " + buyAndSellStock2.maxProfit(prices));
+
    }
 }
