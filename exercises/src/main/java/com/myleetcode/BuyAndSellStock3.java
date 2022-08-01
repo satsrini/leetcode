@@ -25,17 +25,24 @@ public class BuyAndSellStock3
           return 0;
       }
 
-      int max = 0;
-
       int profit1 = 0;
       int profit2 = 0;
+      int begin = 0;
 
-      for(int i = 0; i < prices.length-1; i++)
+      for(int i = 1; i < prices.length-1; i++)
       {
+         if(prices[begin] > prices[i])
+         {
+            // TBD: find interim profit
+            int interimProfit = prices[i-1]-prices[begin];
+            begin = i;
+            continue;
+         }
 
+         
       }
 
-      return max;
+      return profit1+profit2;
    }
 
    public static void main(String[] args)
