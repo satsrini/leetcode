@@ -32,17 +32,11 @@ public class BuyAndSellStock3
       int begin = 0;
       for(int i = 1; i < prices.length; i++)
       {
-         if(prices[begin] > prices[i])
-         {
-            fixProfit(prices[i-1]-prices[begin]);
-            begin = i;
-            continue;
-         }
 
-         if(i == prices.length-1)
+         if(i == prices.length-1 || prices[i] > prices[i+1])
          {
             fixProfit(prices[i]-prices[begin]);
-            break;
+            begin = i+1;
          }
          
       }
@@ -65,7 +59,7 @@ public class BuyAndSellStock3
 
    }
 
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
       System.out.println("Hello BuyAndSellStock3");
 
@@ -74,5 +68,17 @@ public class BuyAndSellStock3
 
       System.out.println("Should be 6: " + buyAndSellStock3.maxProfit(prices));      
 
+   }*/
+
+   public static void main(String[] args)
+   {
+      System.out.println("Hello BuyAndSellStock3");
+
+      BuyAndSellStock3 buyAndSellStock3 = new BuyAndSellStock3();
+      int[] prices = {1,4,2};
+
+      System.out.println("Should be 3: " + buyAndSellStock3.maxProfit(prices));
+
    }
+
 }
