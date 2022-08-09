@@ -17,12 +17,28 @@ public class BuyAndSellStock2UsingDP
 
   public int maxProfit(int[] prices)
   {
-     return 0;
+
+     int[][] DP = new int[1][2];
+     
+     DP[0][1] = prices[0];
+
+     for(int i = 1; i < prices.length; i++)
+     {
+        DP[0][0] += Math.max(0, prices[i]-DP[0][1]);
+        DP[0][1] = prices[i];
+     }
+
+     return DP[0][0];
   }
 
   public static void main(String[] args)
   {
      System.out.println("Hello BuyAndSellStock2UsingDP");
+
+     int[] prices = {7,1,5,3,6,4};
+
+     BuyAndSellStock2UsingDP buyAndSellStock2UsingDP = new BuyAndSellStock2UsingDP();
+     System.out.println("Should be 7: " + buyAndSellStock2UsingDP.maxProfit(prices));
   }
 
 }
