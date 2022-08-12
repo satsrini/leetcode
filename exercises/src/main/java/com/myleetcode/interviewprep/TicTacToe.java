@@ -42,7 +42,7 @@ public class TicTacToe
 
     if(win)
     {
-       return 1;
+       return player;
     }
 
     // search the column
@@ -58,7 +58,7 @@ public class TicTacToe
 
     if(win)
     {
-      return 1;
+      return player;
     }
 
     // diagonal down
@@ -77,7 +77,7 @@ public class TicTacToe
 
     if(win)
     {
-       return 1;
+       return player;
     }
 
     // diagonal up
@@ -97,7 +97,7 @@ public class TicTacToe
 
     if(win)
     {
-       return 1;
+       return player;
     }
 
     return 0;
