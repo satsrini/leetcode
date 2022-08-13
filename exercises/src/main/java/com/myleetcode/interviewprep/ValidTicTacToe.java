@@ -43,10 +43,12 @@ public class ValidTicTacToe
          }
       }
 
+
       if(oCount > xCount || oCount < xCount-1)
       {
           return false;      
       }
+
 
       if(isCharWin(elements, 'X') && isCharWin(elements, 'O') )
       {
@@ -57,6 +59,11 @@ public class ValidTicTacToe
       {
           return false;
       }
+
+      if(xCount == 5 && oCount == 4)
+      {
+          return false;
+      }     
 
       return true;
    }
