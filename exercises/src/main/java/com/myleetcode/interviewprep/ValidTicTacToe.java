@@ -53,6 +53,11 @@ public class ValidTicTacToe
           return false;
       }
 
+      if(isCharWin(elements, 'X') && xCount == oCount)
+      {
+          return false;
+      }
+
       return true;
    }
 
