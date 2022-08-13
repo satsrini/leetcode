@@ -20,37 +20,69 @@ public class ValidTicTacToe
    public boolean validTicTacToe(String[] board)
    {
 
-      StringBuilder fullString = new StringBuilder();
-
-      for(String str:board)
-      {
-         fullString.append(str);
-      }
-
-      char[] stringChars = fullString.toString().toCharArray();
+      char[][] elements = new char[3][3];
 
       int xCount = 0;
       int oCount = 0;
 
-      for(char c:stringChars)
+      for(int i = 0; i < board.length; i++)
       {
-          if(c == 'X')
-          {
-             xCount++;
-          }else
-          if(c == 'O')
-          {
-            oCount++;
-          }
+         char[] row = board[i].toCharArray();
+         for(int j=0; j < row.length; j++)
+         {
+           elements[i][j] = row[j];
 
+           if(row[j] == 'X')
+           {
+              xCount++;
+           }else
+           if(row[j] == 'O')
+           {
+             oCount++;
+           }
+         }
       }
 
       if(oCount > xCount || oCount < xCount-1)
+      {
+          return false;      
+      }
+
+      if(isCharWin(elements, 'X') && isCharWin(elements, 'O') )
       {
           return false;
       }
 
       return true;
+   }
+
+   private boolean isCharWin(char[][] elements, char c)
+   {
+      for(int i = 0; i < 3;i++)
+      {
+         if(elements[i][0] == c && elements[i][1] ==c && elements[i][2] == c)
+         {
+            return true;
+         }
+
+         if(elements[0][i] == c && elements[1][i] ==c && elements[2][i] == c)
+         {
+            return true;
+         }
+      }
+
+      if(elements[0][0] == c && elements[1][1] ==c && elements[2][2] == c)
+      {
+         return true;
+      }
+
+      if(elements[0][2] == c && elements[1][1] ==c && elements[2][0] == c)
+      {
+         return true;
+      }
+
+      return false;
+
    }
 
 
