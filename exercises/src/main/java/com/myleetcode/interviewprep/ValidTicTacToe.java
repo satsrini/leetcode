@@ -60,10 +60,12 @@ public class ValidTicTacToe
           return false;
       }
 
-      if(xCount == 5 && oCount == 4)
+
+      if(isCharWin(elements, 'O') && xCount > oCount)
       {
           return false;
-      }     
+      }
+
 
       return true;
    }
@@ -109,7 +111,7 @@ public class ValidTicTacToe
       System.out.println("Should be true: " + validTicTacToe.validTicTacToe(board));
    }*/
 
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
       System.out.println("Hello ValidTicTacToe");
 
@@ -118,7 +120,19 @@ public class ValidTicTacToe
       String[] board = {"XOX"," X ","   "};
 
       System.out.println("Should be false: " + validTicTacToe.validTicTacToe(board));
+   }*/
+
+   public static void main(String[] args)
+   {
+      System.out.println("Hello ValidTicTacToe");
+
+      ValidTicTacToe validTicTacToe = new ValidTicTacToe();
+
+      String[] board = {"OXX","XOX","OXO"};
+
+      System.out.println("Should be false: " + validTicTacToe.validTicTacToe(board));
    }
+
 
 
 }
