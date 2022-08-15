@@ -43,7 +43,7 @@ public class BinaryTreeRightSideView
 
        queue.add(node);
 
-       while(queue.size() > 0)
+       while(!queue.isEmpty())
        {
           int rowLength = queue.size();
           list.add(queue.peek().val);
