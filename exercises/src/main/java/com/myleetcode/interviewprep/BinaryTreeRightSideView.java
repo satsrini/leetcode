@@ -13,7 +13,7 @@ import java.util.ArrayDeque;
  *
  * @author  Satish Srinivasan
  * @version 1.0
- * @since   2022-08-12
+ * @since   2022-08-15
  */
 
 
@@ -27,13 +27,38 @@ public class BinaryTreeRightSideView
    {
       List<Integer> result = new ArrayList<>();
       
-      Queue<Integer> queue = new ArrayDeque<>();
+      bfs(result,root);
 
       return result;
    }
 
-   private void bfs(List<Integer> list, Queue<Integer> queue, TreeNode node)
+   private void bfs(List<Integer> list,TreeNode node)
    {
+       Queue<TreeNode> queue = new ArrayDeque<>();
+
+       queue.add(node);
+
+       while(queue.size() > 0)
+       {
+          int rowLength = queue.size();
+          list.add(queue.peek().val);
+
+          for(int i = 0; i < rowLength; i++)
+          {
+             TreeNode childNode = queue.poll();
+
+             if(childNode.right != null)
+             {
+                queue.add(childNode.right);
+             }
+
+             if(childNode.left != null)
+             {
+               queue.add(childNode.left);
+             }
+
+          }
+       }
 
    }
 
