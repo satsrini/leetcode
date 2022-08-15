@@ -2,6 +2,8 @@ package com.myleetcode.interviewprep;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Queue;
+import java.util.ArrayDeque;
 
 /**
  * <h1>BinaryTreeRightSideView.java</h1>
@@ -24,9 +26,15 @@ public class BinaryTreeRightSideView
    public List<Integer> rightSideView(TreeNode root)
    {
       List<Integer> result = new ArrayList<>();
-
+      
+      Queue<Integer> queue = new ArrayDeque<>();
 
       return result;
+   }
+
+   private void bfs(List<Integer> list, Queue<Integer> queue, TreeNode node)
+   {
+
    }
 
    private class TreeNode
