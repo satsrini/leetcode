@@ -20,6 +20,11 @@ public class LongestCommonPrefix
    public String longestCommonPrefix(String[] strs)
    {
 
+      if(strs.length == 1)
+      {
+         return strs[0];
+      }
+
       int lo=0;
       int hi = strs[0].length() -1;
       int mid = lo + (hi-lo)/2 + 1;
@@ -61,7 +66,7 @@ public class LongestCommonPrefix
    }
 
 
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
       System.out.println("Hello Longest Common Prefix");
 
@@ -70,7 +75,7 @@ public class LongestCommonPrefix
       LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
 
       System.out.println("Shoudl be fl:  " + longestCommonPrefix.longestCommonPrefix(strs));
-   }
+   }*/
 
 
    /*public static void main(String[] args)
@@ -83,6 +88,17 @@ public class LongestCommonPrefix
 
       System.out.println("Shoudl be empty:  " + longestCommonPrefix.longestCommonPrefix(strs));
    }*/
+
+   public static void main(String[] args)
+   {
+      System.out.println("Hello Longest Common Prefix");
+
+      String[] strs = {"a"};
+
+      LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
+
+      System.out.println("Shoudl be a:  " + longestCommonPrefix.longestCommonPrefix(strs));
+   }
 
 
 }
