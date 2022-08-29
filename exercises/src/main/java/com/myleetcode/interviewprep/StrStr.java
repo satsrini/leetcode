@@ -30,7 +30,7 @@ public class StrStr
 
        int resultIndex = -1;
        int count = 0;
-       while( count < haystack.length()-needle.length())
+       while( count <= haystack.length()-needle.length())
        {
 
           if(haystack.substring(count, count+needle.length()).equals(needle))
@@ -58,5 +58,18 @@ public class StrStr
         System.out.println("Should be 2:   " + strStr.strStr(haystack, needle));
 
     }
+
+    /*public static void main(String[] args)
+    {
+        System.out.println("Hello StrStr");
+
+        StrStr strStr = new StrStr();
+        String haystack = "abc";
+        String needle = "c";
+
+        System.out.println("Should be 2:   " + strStr.strStr(haystack, needle));
+
+    }*/
+
 
 }
