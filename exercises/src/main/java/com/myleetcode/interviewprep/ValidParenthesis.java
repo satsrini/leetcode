@@ -50,7 +50,7 @@ public class ValidParenthesis
             continue;
          }
 
-         if(values.get(stack.pop()) != parenthesis)
+         if(stack.empty() || values.get(stack.pop()) != parenthesis)
          {
             return false;
          }
@@ -83,7 +83,7 @@ public class ValidParenthesis
    }*/
 
 
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
       System.out.println("Hello ValidParenthesis");
 
@@ -92,7 +92,17 @@ public class ValidParenthesis
 
       System.out.println("not Valid:false  " + validParenthesis.isValid(s));
 
-   }
+   }*/
 
+   public static void main(String[] args)
+   {
+      System.out.println("Hello ValidParenthesis");
+
+      String s = "){";
+      ValidParenthesis validParenthesis = new ValidParenthesis();
+
+      System.out.println("not Valid:false  " + validParenthesis.isValid(s));
+
+   }
 
 }
