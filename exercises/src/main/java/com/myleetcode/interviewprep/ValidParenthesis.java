@@ -57,7 +57,7 @@ public class ValidParenthesis
 
       }
 
-      return true;
+      return stack.empty();
    }
 
    /*public static void main(String[] args)
@@ -71,11 +71,23 @@ public class ValidParenthesis
 
    }*/
 
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
       System.out.println("Hello ValidParenthesis");
 
       String s = "(]";
+      ValidParenthesis validParenthesis = new ValidParenthesis();
+
+      System.out.println("not Valid:false  " + validParenthesis.isValid(s));
+
+   }*/
+
+
+   public static void main(String[] args)
+   {
+      System.out.println("Hello ValidParenthesis");
+
+      String s = "((";
       ValidParenthesis validParenthesis = new ValidParenthesis();
 
       System.out.println("not Valid:false  " + validParenthesis.isValid(s));
