@@ -37,7 +37,7 @@ public class LongestCommonPrefix
             mid = lo + (hi-lo)/2 + 1;
          }else
          {
-            hi = mid;    // going left
+            hi = mid-1;    // going left
             mid = lo + (hi-lo)/2 + 1;
          }
       }
@@ -71,6 +71,18 @@ public class LongestCommonPrefix
 
       System.out.println("Shoudl be fl:  " + longestCommonPrefix.longestCommonPrefix(strs));
    }
+
+
+   /*public static void main(String[] args)
+   {
+      System.out.println("Hello Longest Common Prefix");
+
+      String[] strs = {"dog", "racecar", "car"};
+
+      LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
+
+      System.out.println("Shoudl be empty:  " + longestCommonPrefix.longestCommonPrefix(strs));
+   }*/
 
 
 }
