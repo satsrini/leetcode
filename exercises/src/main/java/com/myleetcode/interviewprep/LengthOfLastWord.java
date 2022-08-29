@@ -16,10 +16,23 @@ public class LengthOfLastWord
 
   public LengthOfLastWord(){}
 
+  public int lengthOfLastWord(String s)
+  {
+    String[] result = s.split(" ");
+
+    return result[result.length-1].length();
+  }
 
   public static void main(String[] args)
   {
      System.out.println("Hello LengthOfLastWord");
+
+     String s = "luffy is still joyboy";
+
+     LengthOfLastWord lengthOfLastWord = new LengthOfLastWord();
+
+     System.out.println("Should be 6: " + lengthOfLastWord.lengthOfLastWord(s));
+  
   }
 
 }
