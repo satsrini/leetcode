@@ -36,7 +36,9 @@ public class AddBinary
       {
          m = Character.getNumericValue(l.charAt(i));
          n = 0;
-         if(i < s.length()){
+
+
+         if(i >= diff){
             n = Character.getNumericValue(s.charAt(i-diff));
          }
 
@@ -73,7 +75,7 @@ public class AddBinary
       return result.reverse().toString();
    }
 
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
       System.out.println("Hello AddBinary");
 
@@ -83,6 +85,19 @@ public class AddBinary
       String b = "1011";
 
       System.out.println("Should be 10101: " + addBinary.addBinary(a,b));
+   }*/
+
+   public static void main(String[] args)
+   {
+      System.out.println("Hello AddBinary");
+
+      AddBinary addBinary = new AddBinary();
+
+      String a = "11";
+      String b = "1";
+
+      System.out.println("Should be 100: " + addBinary.addBinary(a,b));
    }
+
 
 }
