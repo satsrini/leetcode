@@ -14,11 +14,6 @@ package com.myleetcode.interviewprep;
 public class ValidPalindrome
 {
 
-    private static int startLiteral = 97;
-    private static int endLiteral = 122;
-
-    private static int startNum = 48;
-    private static int endNum = 57;
 
     public ValidPalindrome(){}
 
@@ -29,20 +24,19 @@ public class ValidPalindrome
 
        int i = 0;
        int j = s.length()-1;
-       int a,b;
+       char a,b;
    
        while(i < j)
        {
           a = s.charAt(i);
           b = s.charAt(j);
-          if(!((a >= startLiteral && a <= endLiteral) || (a >= startNum &&  a <= endNum)))
+          if(!Character.isLetterOrDigit(a))
           {
-             System.out.println("In AAAA " + a);
              i++;
              continue;
           }
 
-          if(!((b >= startLiteral && b <= endLiteral) || (b >= startNum && b <= endNum)))
+          if(!Character.isLetterOrDigit(b))
           {
              j--;
              continue;
