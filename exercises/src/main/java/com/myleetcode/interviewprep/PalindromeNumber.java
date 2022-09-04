@@ -50,9 +50,9 @@ public class PalindromeNumber
 
     private int length(int x)
     {
-       int length = 1;
+       int length = 0;
 
-       while(x%10 > 0)
+       while(x > 0)
        {
           x = x/10;
           length++;
@@ -65,6 +65,12 @@ public class PalindromeNumber
     public static void main(String[] args)
     {
          System.out.println("Hello Palindrome Number");
+  
+         PalindromeNumber palindromeNumber = new PalindromeNumber();
+         int x = 121;
+
+         System.out.println("Should be true: " + palindromeNumber.isPalindrome(x));
+
     }
 
 }
