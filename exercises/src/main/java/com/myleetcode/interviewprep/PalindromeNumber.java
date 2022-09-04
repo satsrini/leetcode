@@ -1,5 +1,8 @@
 package com.myleetcode.interviewprep;
 
+import java.util.List;
+import java.util.ArrayList;
+
 /**
  * <h1>PalindromeNumber.java</h1>
  * This class implements PalindromeNumber solution.
@@ -19,6 +22,7 @@ public class PalindromeNumber
     public boolean isPalindrome(int x)
     {
 
+
        if(x < 0)
        {
           return false;
@@ -29,38 +33,26 @@ public class PalindromeNumber
           return true;
        }
 
-       int length = length(x);
 
-       int a = (int)Math.pow((double)10,(double)(length-1));
-       int b = 10;
+       List<Integer> elements = new ArrayList<>();
 
-       for(int i = 0; i < length/2; i++)
+       while(x > 0)
        {
-          if(x/a != x%b)
+          elements.add(x%10);
+          x = x/10;
+       }
+
+
+       for(int i = 0; i < elements.size()/2; i++)
+       {
+          if(elements.get(i) != elements.get(elements.size()-i-1))
           {
              return false;
           }
-
-          a = a/10;
-          b = b*10;
        }
 
        return true;
     }
-
-    private int length(int x)
-    {
-       int length = 0;
-
-       while(x > 0)
-       {
-          x = x/10;
-          length++;
-       }
-
-       return length;
-    }
-
 
     public static void main(String[] args)
     {
@@ -72,5 +64,17 @@ public class PalindromeNumber
          System.out.println("Should be true: " + palindromeNumber.isPalindrome(x));
 
     }
+
+    /*public static void main(String[] args)
+    {
+         System.out.println("Hello Palindrome Number");
+
+         PalindromeNumber palindromeNumber = new PalindromeNumber();
+         int x = 1001;
+
+         System.out.println("Should be true: " + palindromeNumber.isPalindrome(x));
+
+    }*/
+
 
 }
