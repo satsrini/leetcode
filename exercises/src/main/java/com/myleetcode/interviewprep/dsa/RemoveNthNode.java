@@ -17,7 +17,35 @@ public class RemoveNthNode
 
    public ListNode solution(ListNode head, int n)
    {
-       return null;
+       ListNode currentNode = head;
+
+       if(head == null || head.next == null) // empty or just the head
+       {
+          return null;
+       }
+
+       remove(currentNode, n);
+
+       return head;
+   }
+
+   private int remove(ListNode currentNode, int n)
+   {
+
+       if(currentNode.next == null) // arrived at the last node
+       {
+          return 1;
+       }
+
+       int x = 1 + remove(currentNode.next, n);
+
+       if(x == n) // match found
+       {
+          currentNode.next = currentNode.next.next;
+       }
+
+       return x;
+
    }
 
    public static void main(String[] args)
