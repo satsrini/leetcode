@@ -3,12 +3,12 @@ package com.myleetcode.interviewprep.dsa;
 public class Node<T>
 {
 
-   public T t;
+   public T value;
    public Node<T> next;
 
-   public Node(T t, Node<T> next)
+   public Node(T value, Node<T> next)
    {
-      this.t = t;
+      this.value = value;
       this.next = next;
    }
 
