@@ -13,6 +13,7 @@ package com.myleetcode.interviewprep.dsa;
 public class RemoveNthNode
 {
 
+
    public RemoveNthNode(){}
 
    public ListNode solution(ListNode head, int n)
@@ -24,7 +25,12 @@ public class RemoveNthNode
           return null;
        }
 
-       remove(currentNode, n);
+       int y = remove(currentNode, n);
+
+       if(y == n) // case where sz is same as n
+       {
+          head = head.next;
+       }
 
        return head;
    }
@@ -37,9 +43,9 @@ public class RemoveNthNode
           return 1;
        }
 
-       int x = 1 + remove(currentNode.next, n);
+       int x = 1 + remove(currentNode.next, n); // recursive calling
 
-       if(x == n) // match found
+       if(x == n+1) // match found
        {
           currentNode.next = currentNode.next.next;
        }
@@ -48,18 +54,75 @@ public class RemoveNthNode
 
    }
 
+   /*public static void main(String[] args)
+   {
+       System.out.println("Hello Remove Nth Node");
+
+       ListNode fifth = new ListNode(5,null);
+       ListNode fourth = new ListNode(4,fifth);
+       ListNode third = new ListNode(3,fourth);
+       ListNode second = new ListNode(2,third);
+       ListNode first = new ListNode(1,second);
+
+       ListNode current = first;
+
+       System.out.println("\n\n");
+       while(current != null)
+       {
+          System.out.print(" " + current.val);
+          current = current.next;
+       }
+       System.out.println("\n\n");
+
+       RemoveNthNode removeNthNode = new RemoveNthNode();
+
+       first = removeNthNode.solution(first, 2);
+
+       ListNode currentNode = first;
+
+       System.out.println("\n\n");
+       while(currentNode != null)
+       {
+          System.out.print(" " + currentNode.val);
+          currentNode = currentNode.next;
+       }
+       System.out.println("\n\n");
+
+   }*/
+
    public static void main(String[] args)
    {
        System.out.println("Hello Remove Nth Node");
-   }
 
-   public class ListNode 
-   {
- 	int val;
- 	ListNode next;
- 	ListNode() {}
- 	ListNode(int val) { this.val = val; }
- 	ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+       ListNode second = new ListNode(2,null);
+       ListNode first = new ListNode(1,second);
+
+       ListNode current = first;
+
+       System.out.println("\n\n");
+       while(current != null)
+       {
+          System.out.print(" " + current.val);
+          current = current.next;
+       }
+       System.out.println("\n\n");
+
+       RemoveNthNode removeNthNode = new RemoveNthNode();
+
+       first = removeNthNode.solution(first, 2);
+
+       ListNode currentNode = first;
+
+       System.out.println("\n\n");
+
+       System.out.println("\n\n");
+       while(currentNode != null)
+       {
+          System.out.print(" " + currentNode.val);
+          currentNode = currentNode.next;
+       }
+       System.out.println("\n\n");
+
    }
 
 }
