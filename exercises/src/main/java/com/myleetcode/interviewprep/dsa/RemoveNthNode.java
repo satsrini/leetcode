@@ -54,7 +54,7 @@ public class RemoveNthNode
 
    }
 
-   /*public static void main(String[] args)
+   public static void main(String[] args)
    {
        System.out.println("Hello Remove Nth Node");
 
@@ -88,9 +88,9 @@ public class RemoveNthNode
        }
        System.out.println("\n\n");
 
-   }*/
+   }
 
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
        System.out.println("Hello Remove Nth Node");
 
@@ -123,6 +123,6 @@ public class RemoveNthNode
        }
        System.out.println("\n\n");
 
-   }
+   }*/
 
 }
