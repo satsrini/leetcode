@@ -65,6 +65,11 @@ public class Stack<T> implements Iterable<T>
       public T next()
       {
 
+         if(nextNode == null)
+         {
+            return null;
+         }
+
          Node<T> x = nextNode;
          nextNode = nextNode.next;
 
