@@ -16,16 +16,17 @@ public class Queue<T> implements Iterable<T>
 
    public void enqueue(T t)
    {
-      if(isEmpty())
-      {
-         head = new Node<>(t, null);
-         current = head;
-         return;
-      }
 
       Node<T> x = new Node<>(t,null);
-      current.next = x;
-      current = current.next;
+      if(isEmpty())
+      {
+         head = x;
+         current = head;
+      }else
+      {
+        current.next = x;
+        current = current.next;
+      }
       N++;
 
    }
@@ -90,6 +91,61 @@ public class Queue<T> implements Iterable<T>
           currentNode = currentNode.next;
           return x.value;
       }
+
+   }
+
+   public static void main(String[] args)
+   {
+      Queue<Integer> queue = new Queue<>();
+
+      queue.enqueue(1);
+      queue.enqueue(2);
+      queue.enqueue(3);
+      queue.enqueue(4);
+      queue.enqueue(5);
+
+      System.out.println("SIZE: " + queue.size());
+
+      System.out.println("\n\n");
+      for(int i:queue)
+      {
+         System.out.print(" " + i);
+      }
+      System.out.println("\n\n");
+
+      System.out.println("\n\n");
+      for(int i:queue)
+      {
+         System.out.print(" " + i);
+      }
+      System.out.println("\n\n");
+
+      System.out.println("DEQUEUING");
+      System.out.println(queue.dequeue());
+      System.out.println(queue.dequeue());
+
+      System.out.println("SIZE: " + queue.size());
+
+      System.out.println("\n\n");
+      for(int i:queue)
+      {
+         System.out.print(" " + i);
+      }
+      System.out.println("\n\n");
+
+
+      System.out.println("ENQUEUING");
+      queue.enqueue(6);
+      queue.enqueue(7);
+      System.out.println("SIZE: " + queue.size());
+
+      System.out.println("\n\n");
+      for(int i:queue)
+      {
+         System.out.print(" " + i);
+      }
+      System.out.println("\n\n");
+
 
    }
 }
