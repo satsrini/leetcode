@@ -46,6 +46,17 @@ public class Queue<T> implements Iterable<T>
       return x.value;
    }
 
+   public T peek()
+   {
+      if(isEmpty())
+      {
+         return null;
+      }
+
+      return head.value;
+
+   }
+
    public boolean isEmpty()
    {
       return N==0;

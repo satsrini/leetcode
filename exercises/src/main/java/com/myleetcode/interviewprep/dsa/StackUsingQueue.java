@@ -7,35 +7,51 @@ package com.myleetcode.interviewprep.dsa;
 
 public class StackUsingQueue<T>
 {
-  
+ 
+  private Queue<T> queueA;
+  private Queue<T> queueB;
+ 
   public StackUsingQueue()
   {
-
+     queueA = new Queue<>();
+     queueB = new Queue<>();
   }
 
   public void push(T t)
   {
 
+    while(!queueA.isEmpty())
+    {
+       queueB.enqueue(queueA.dequeue());
+    }
+
+    queueA.enqueue(t);
+
+    while(!queueB.isEmpty())
+    {
+      queueA.enqueue(queueB.dequeue());
+    }
+
   }
 
   public T pop()
   {
-     return null;
+     return queueA.dequeue();
   }
 
   public T top()
   {
-    return null;
+    return queueA.peek();
   }
 
   public boolean isEmpty()
   {
-     return true;
+     return queueA.isEmpty();
   }
 
   public int size()
   {
-     return 0;
+     return queueA.size();
   }
 
 }
