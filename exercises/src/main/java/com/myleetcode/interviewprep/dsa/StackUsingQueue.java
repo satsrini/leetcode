@@ -54,4 +54,24 @@ public class StackUsingQueue<T>
      return queueA.size();
   }
 
+  public static void main(String[] args)
+  {
+      StackUsingQueue<Integer> stack = new StackUsingQueue<>();
+
+      stack.push(1);
+      stack.push(2);
+      stack.push(3);
+      stack.push(4);
+      stack.push(5);
+
+      System.out.println("SIZE: " + stack.size());
+
+      int N = stack.size();
+
+      for(int i = 0; i < N; i++)
+      {
+         System.out.print(" " + stack.pop());
+      }
+  }
+
 }
