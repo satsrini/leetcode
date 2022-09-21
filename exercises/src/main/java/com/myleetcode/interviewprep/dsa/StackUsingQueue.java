@@ -9,27 +9,24 @@ public class StackUsingQueue<T>
 {
  
   private Queue<T> queueA;
-  private Queue<T> queueB;
  
   public StackUsingQueue()
   {
      queueA = new Queue<>();
-     queueB = new Queue<>();
   }
 
   public void push(T t)
   {
 
-    queueB.enqueue(t);
-    while(!queueA.isEmpty())
-    {
-       queueB.enqueue(queueA.dequeue());
-    }
+    queueA.enqueue(t);
 
-    // swapping
-    Queue<T> tempQueue = queueA;
-    queueA = queueB;
-    queueB = tempQueue;
+    int count = queueA.size();
+
+    while(count > 1)
+    {
+       queueA.enqueue(queueA.dequeue());
+       count--;
+    }
 
   }
 
