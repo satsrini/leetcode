@@ -45,6 +45,16 @@ public class Stack<T> implements Iterable<T>
       return N;
    }
 
+   public T peek()
+   {
+      if(isEmpty())
+      {
+         return null;
+      }
+
+      return currentNode.value;
+   }
+
    @Override
    public Iterator<T> iterator()
    {
