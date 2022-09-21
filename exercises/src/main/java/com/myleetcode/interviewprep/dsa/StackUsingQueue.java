@@ -20,17 +20,16 @@ public class StackUsingQueue<T>
   public void push(T t)
   {
 
+    queueB.enqueue(t);
     while(!queueA.isEmpty())
     {
        queueB.enqueue(queueA.dequeue());
     }
 
-    queueA.enqueue(t);
-
-    while(!queueB.isEmpty())
-    {
-      queueA.enqueue(queueB.dequeue());
-    }
+    // swapping
+    Queue<T> tempQueue = queueA;
+    queueA = queueB;
+    queueB = tempQueue;
 
   }
 
