@@ -50,7 +50,7 @@ public class QueueUsingStackAmortized<T>
 
       if(!stackA.isEmpty())
       {
-         stackA.peek();
+         front = stackA.peek();
       }
 
       return front;
@@ -64,5 +64,43 @@ public class QueueUsingStackAmortized<T>
    public boolean isEmpty()
    {
       return stackA.isEmpty() && stackB.isEmpty();
+   }
+
+   public static void main(String[] args)
+   {
+      QueueUsingStackAmortized<Integer> queueUsingStackAmortized = new QueueUsingStackAmortized<>();
+
+      queueUsingStackAmortized.enqueue(1);
+      queueUsingStackAmortized.enqueue(2);
+      queueUsingStackAmortized.enqueue(3);
+      queueUsingStackAmortized.enqueue(4);
+      queueUsingStackAmortized.enqueue(5);
+
+      System.out.println("\n");
+      System.out.println("SIZE:   " + queueUsingStackAmortized.size());
+      int N = queueUsingStackAmortized.size();
+      for(int i = 0; i < N; i++)
+      {
+         System.out.print(" " + queueUsingStackAmortized.dequeue());
+      }
+      System.out.println("\n");
+      System.out.println("EMPTY: " + queueUsingStackAmortized.isEmpty());
+
+
+      System.out.println("\n");
+      System.out.println("ENQUEING TWO MORE");
+      queueUsingStackAmortized.enqueue(6);
+      queueUsingStackAmortized.enqueue(7);
+
+      N = queueUsingStackAmortized.size();
+
+      System.out.println("\n");
+      for(int i = 0; i < N; i++)
+      {
+         System.out.print(" " + queueUsingStackAmortized.dequeue());
+      }
+
+      System.out.println("\n");
+
    }
 }
