@@ -20,13 +20,13 @@ public class QueueUsingStackAmortized<T>
 
    public void enqueue(T t)
    {
-      stackB.push(t);
 
-      if(stackA.isEmpty())
+      if(stackB.isEmpty())
       {
          front = t;
       }
 
+      stackB.push(t);
    }
 
    public T dequeue()
@@ -40,8 +40,6 @@ public class QueueUsingStackAmortized<T>
          }
       }
 
-      front = stackA.peek();
-
       return stackA.pop();
    }
 
@@ -50,7 +48,7 @@ public class QueueUsingStackAmortized<T>
 
       if(!stackA.isEmpty())
       {
-         front = stackA.peek();
+         return stackA.peek();
       }
 
       return front;
@@ -91,6 +89,8 @@ public class QueueUsingStackAmortized<T>
       System.out.println("ENQUEING TWO MORE");
       queueUsingStackAmortized.enqueue(6);
       queueUsingStackAmortized.enqueue(7);
+
+      System.out.println("PEEK: " + queueUsingStackAmortized.peek());
 
       N = queueUsingStackAmortized.size();
 
