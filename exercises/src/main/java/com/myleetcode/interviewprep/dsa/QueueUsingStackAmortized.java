@@ -10,23 +10,50 @@ public class QueueUsingStackAmortized<T>
 
    private Stack<T> stackA;
    private Stack<T> stackB;
+   private T front;
 
-   public QueueUsingStackAmortized(){}
-
-   public void enqueue(T t)
+   public QueueUsingStackAmortized()
    {
       stackA = new Stack<>();
       stackB = new Stack<>();
    }
 
+   public void enqueue(T t)
+   {
+      stackB.push(t);
+
+      if(stackA.isEmpty())
+      {
+         front = t;
+      }
+
+   }
+
    public T dequeue()
    {
-      return null;
+
+      if(stackA.isEmpty())
+      {
+         while(!stackB.isEmpty())
+         {
+            stackA.push(stackB.pop());
+         }
+      }
+
+      front = stackA.peek();
+
+      return stackA.pop();
    }
 
    public T peek()
    {
-      return null;
+
+      if(!stackA.isEmpty())
+      {
+         stackA.peek();
+      }
+
+      return front;
    }
 
    public int size()
